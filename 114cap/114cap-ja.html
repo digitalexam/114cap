@@ -94,52 +94,6 @@
         </div>
     </div>
 
-    <script>
-        function validateLogin() {
-            const schoolCode = document.getElementById('school-code').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (schoolCode === '56401029' && password === '56401029') {
-                let message = '';
-                let redirectUrl = '';
-
-                switch (username) {
-                    case 'admins01':
-                        message = '新竹市立培英國民中學 莊雋逸 監試委員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1W7cMivvSz6UQwBa_OqDcGznD0sApFWul?usp=drive_link';
-                        break;
-                    case 'admins02':
-                        message = '新竹市立培英國民中學 Irene Chen 監試委員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1W7cMivvSz6UQwBa_OqDcGznD0sApFWul?usp=drive_link';
-                        break;
-                    case 'admins03':
-                        message = '新竹市立培英國民中學 張竣淵 監試委員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1W7cMivvSz6UQwBa_OqDcGznD0sApFWul?usp=drive_link';
-                        break;
-                    case 'adminc01':
-                        message = '新竹市立培英國民中學 莊雋逸 批閱人員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1D-dQr4Xev-73xjdk9_Cnlna478fkspOK?usp=drive_link';
-                        break;
-                    case 'adminc02':
-                        message = '新竹市立培英國民中學 王紀凱 批閱人員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1yYxu5JmZYzMnpoaXheboL71Z869mfMjk?usp=sharing';
-                        break;
-                    case 'adminc03':
-                        message = '新竹市立培英國民中學 林秀玲 批閱人員 您好';
-                        redirectUrl = 'https://drive.google.com/drive/folders/1wXIqo39geICuwgrQwzmr9SlGJtoQfaCt?usp=sharing';
-                        break;
-                    default:
-                        alert('帳號或密碼錯誤');
-                        return;
-                }
-
-                alert(message);
-                window.location.href = redirectUrl;
-            } else {
-                alert('資料錯誤或不完整');
-            }
-        }
-    </script>
+    <script src="/114cap-ja.js"></script>
 </body>
 </html>
