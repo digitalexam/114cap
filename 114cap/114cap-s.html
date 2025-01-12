@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高中數位模考平台</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* 替換為背景圖片的路徑 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .back-link {
+            font-size: 28px; /* 放大「回上一頁」文字 */
+            color: #f8bf24;
+            text-decoration: underline;
+            background-color: white;
+            padding: 12px 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-right: 20px;
+            text-decoration-thickness: 2px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 450px; /* 放大Logo圖片 */
+            height: auto;
+        }
+
+        .version {
+            font-size: 70px; /* 放大「高中版」文字 */
+            font-weight: bold;
+            color: #ff0000;
+            margin-left: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px; /* 按鈕之間的距離 */
+            margin-top: 50px;
+        }
+
+        .button {
+            background-color: white; /* 加背景以突顯內容 */
+            font-size: 28px; /* 放大按鈕文字 */
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column; /* 內容垂直排列 */
+            align-items: center;
+            padding: 30px 20px; /* 增加內部邊距 */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 增加陰影 */
+            cursor: pointer;
+            min-width: 300px; /* 最小寬度 */
+            gap: 20px; /* 圖片和文字的間距 */
+        }
+
+        .button img {
+            width: 120px; /* 放大圖片 */
+            height: auto;
+        }
+
+        .green {
+            background-color: #28a745;
+        }
+
+        .red {
+            background-color: #dc3545;
+        }
+
+        .blue {
+            background-color: #007bff;
+        }
+
+        .blue span {
+            display: inline-block;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <!-- 中央內容 -->
+    <div class="container">
+        <!-- 標題區域 -->
+        <div class="logo-wrapper">
+            <a href="114cap.html" class="back-link">回上一頁</a>
+            <div class="logo">
+                <img src="logo2.png" alt="數位模考平台">
+            </div>
+            <div class="version">高中版</div>
+        </div>
+
+        <!-- 按鈕區域 -->
+        <div class="button-container">
+            <a href="114cap-ss.html" class="button green">
+                <span>學生登入</span>
+                <img src="logo3.png" alt="學生登入圖標">
+            </a>
+            <a href="114cap-st.html" class="button red">
+                <span>學校管理員登入</span>
+                <img src="logo4.png" alt="學校管理員登入圖標">
+            </a>
+            <a href="114cap-sa.html" class="button blue">
+                <span>批閱人員與<br>監試委員專區</span>
+                <img src="logo5.png" alt="批閱人員圖標">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

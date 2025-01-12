@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國中學生登入</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .header img {
+            width: 300px;
+            height: auto;
+            margin-right: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: rgb(55, 0, 255);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 400px;
+        }
+        .form-container h2 {
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            color: #333;
+        }
+        .form-container select,
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="114cap-j.html">
+            <img src="logo2.png" alt="logo">
+        </a>
+        <h1>國中版</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>國中學生登入</h2>
+            <form id="login-form">
+                <select id="school-code">
+                    <option value="B4複習考">B4複習考</option>
+                    <option value="B1~B2模擬考">B1~B2模擬考</option>
+                    <option value="B3複習考">B3複習考</option>
+                    <option value="B1~B4模擬考">B1~B4模擬考</option>
+                    <option value="B5複習考">B5複習考</option>
+                    <option value="B1~B5模擬考">B1~B5模擬考</option>
+                    <option value="B1~B6模擬考">B1~B6模擬考</option>
+                </select>
+                <input type="text" id="username" placeholder="請輸入帳號">
+                <input type="password" id="password" placeholder="請輸入密碼">
+                <button type="button" onclick="validateLogin()">登入</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const schoolCode = document.getElementById('school-code').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // 帳號與密碼的對應表
+            const userDatabase = [
+                { username: "792430452705", password: "1F05DL2M" },
+                { username: "123758051909", password: "F95UY2GK" },
+                { username: "684571820507", password: "SQB7G4GF" }
+            ];
+
+            // 條件與顯示訊息對應表
+            const conditions = {
+                "B4複習考,B1~B2模擬考,B3複習考": "未參加",
+                "B5複習考,B1~B5模擬考,B1~B6模擬考": "未開始",
+                "B1~B4模擬考": "未交卷"
+            };
+
+            // 檢查帳號密碼是否匹配
+            const isValidUser = userDatabase.some(user => user.username === username && user.password === password);
+
+            if (isValidUser) {
+                for (const [key, message] of Object.entries(conditions)) {
+                    if (key.includes(schoolCode)) {
+                        alert(message);
+                        return;
+                    }
+                }
+                alert("未知的考試條件");
+            } else {
+                alert('帳號或密碼錯誤');
+            }
+        }
+    </script>
+</body>
+</html>

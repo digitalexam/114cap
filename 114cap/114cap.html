@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數位模考平台</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.jpg'); /* 替換為正確的背景圖片路徑 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            width: 600px; /* 整體內容寬度增加 */
+            text-align: center;
+        }
+
+        .logo-container {
+            width: 100%;
+            height: 150px; /* 標題圖片高度進一步增加 */
+            overflow: hidden;
+            margin-bottom: 40px; /* 與按鈕的距離 */
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 確保圖片裁切比例正確 */
+            object-position: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* 按鈕之間的間距 */
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            height: 80px; /* 按鈕高度進一步增加 */
+            font-size: 24px; /* 調整按鈕文字大小 */
+            color: white;
+            text-decoration: none;
+            line-height: 80px; /* 垂直置中 */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .blue-button {
+            background-color: #007BFF;
+        }
+
+        .blue-button:hover {
+            background-color: #0056b3;
+        }
+
+        .red-button {
+            background-color: #FF4136;
+        }
+
+        .red-button:hover {
+            background-color: #c2332b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="數位模考平台" class="logo"> <!-- 替換為正確的圖片檔案路徑 -->
+        </div>
+        <div class="button-container">
+            <a href="114cap-j.html" class="button blue-button">國中試務中心</a>
+            <a href="114cap-s.html" class="button red-button">高中試務中心</a>
+        </div>
+    </div>
+</body>
+</html>

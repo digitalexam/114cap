@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高中閱卷與監試委員登入</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .header img {
+            width: 300px;
+            height: auto;
+            margin-right: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: rgb(255, 0, 0);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 400px;
+        }
+        .form-container h2 {
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            color: #333;
+        }
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="114cap-s.html"><img src="logo2.png" alt="logo"></a>
+        <h1>高中版</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>閱卷與監試委員登入</h2>
+            <form id="login-form">
+                <input type="text" id="school-code" placeholder="請輸入學校代碼">
+                <input type="text" id="username" placeholder="請輸入帳號">
+                <input type="password" id="password" placeholder="請輸入密碼">
+                <button type="button" onclick="validateLogin()">登入</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const schoolCode = document.getElementById('school-code').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (schoolCode === '56401029' && password === '56401029') {
+                let message = '';
+                let redirectUrl = '';
+
+                switch (username) {
+                    case 'admins01':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    case 'admins02':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    case 'admins03':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    case 'adminc01':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    case 'adminc02':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    case 'adminc03':
+                        message = '無權限';
+                        redirectUrl = '114cap-sa.html';
+                        break;
+                    default:
+                        alert('帳號或密碼錯誤');
+                        return;
+                }
+
+                alert(message);
+                window.location.href = redirectUrl;
+            } else {
+                alert('資料錯誤或不完整');
+            }
+        }
+    </script>
+</body>
+</html>
