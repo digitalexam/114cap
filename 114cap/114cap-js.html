@@ -129,13 +129,21 @@
             const isValidUser = userDatabase.some(user => user.username === username && user.password === password);
 
             if (isValidUser) {
-                for (const [key, message] of Object.entries(conditions)) {
-                    if (key.includes(schoolCode)) {
-                        alert(message);
-                        return;
+                if (schoolCode === "B5複習考") {
+                    if (username === "564010292705" && password === "1F05DL2M") {
+                        window.location.href = "https://digitalexam.github.io/signin/test/564010292705.html";
+                    } else if (username === "564010290507" && password === "SQB7G4GF") {
+                        window.location.href = "https://digitalexam.github.io/signin/test/564010290507.html";
                     }
+                } else {
+                    for (const [key, message] of Object.entries(conditions)) {
+                        if (key.includes(schoolCode)) {
+                            alert(message);
+                            return;
+                        }
+                    }
+                    alert("未知的考試條件");
                 }
-                alert("未知的考試條件");
             } else {
                 alert('帳號或密碼錯誤');
             }
